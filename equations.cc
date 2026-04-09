@@ -341,7 +341,7 @@ customPDE<dim, degree>::nonExplicitEquationRHS(
 
       // ---------------------------------------------------------------------------
       // Local scalar term f1(phi, grad(phi), u)
-      //
+      
       // The derived scalar residual is:
       //
       //   r_xi = f1^n = -f'(phi) + lambda * B(n) * g'(phi) * u
