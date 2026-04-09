@@ -1,0 +1,16 @@
+#!/bin/bash
+#SBATCH --job-name=ice.solidification
+#SBATCH --time=012:00:00
+#SBATCH --nodes=1
+#SBATCH --ntasks-per-node=16
+#SBATCH --mem=100G
+#SBATCH --partition=cpu
+#SBATCH --account=155847957282
+#SBATCH --output=ice.solidification.%j.out
+
+module purge
+ml foss/2023b CMake/3.27.6 VTK/9.3.0
+
+cd /scratch/user/u.jb337251/phaseField-2.4.2/applications/ice.solidification/build
+
+mpirun -n 16 ./main
